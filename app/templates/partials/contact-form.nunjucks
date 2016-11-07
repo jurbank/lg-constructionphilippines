@@ -1,0 +1,21 @@
+<form action="https://formspree.io/{{contact.email}}" method="POST">
+  <fieldset>
+     <legend>Contact us</legend>
+    <div class="row">
+      <div class="large-12 columns">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="_replyto" placeholder="Email">
+        <label for="">Type of inquiry
+        <select name="Type of inquiry">
+          <option value="home">Home Project</option>
+          <option value="commercial">Commercial Project</option>
+          <option value="rennovation">Rennovation or Addition</option>
+          <option value="general">General Inquiry</option>
+        </select>
+        </label>
+        <textarea name="message" id="" cols="30" rows="10">Message</textarea>
+        <input class="button" type="submit" value="Send">
+      </div>
+    </div>
+  </fieldset>
+</form>

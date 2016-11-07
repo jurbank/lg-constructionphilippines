@@ -1,0 +1,31 @@
+{% set isHomePage = true %}
+{% extends "layout.nunjucks" %}
+
+{% set title = 'Contact Us' %}
+{% set description = "If you have questions about starting your next project, or general inquiries, fill out the form below and we'll be get back to you shortly." %}
+
+{% block content %}
+  {% import 'macros/navigation.nunjucks' as nav %}
+  {{nav.active('contact')}}
+
+
+ <div class="banner padding60 cover-image has-overlay" data-interchange="[images/beach-banner.jpg, small], [images/beach-banner_2x.jpg, medium]">
+    <div class="row column text-center text-invert">
+      <h1>Contact</h1>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <div class="main-content">
+        <div class="row padding60tb">
+          <div class="medium-8 medium-centered columns">
+            <p>If you have questions about starting your next project, or general inquiries, fill out the form below and we'll be get back to you shortly.</p>
+            {% include 'partials/contact-form.nunjucks' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
