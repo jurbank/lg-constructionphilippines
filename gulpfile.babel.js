@@ -6,6 +6,7 @@ import del from 'del';
 import {stream as wiredep} from 'wiredep';
 var nunjucksRender = require('gulp-nunjucks-render');
 var data = require('gulp-data');
+var sitemap = require('gulp-sitemap');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -183,7 +184,19 @@ gulp.task('nunjucks', function() {
   .pipe(gulp.dest('app'))
 });
 
-gulp.task('build', ['nunjucks', 'html', 'images', 'fonts', 'extras'], () => {
+
+gulp.task('sitemap', function () {
+    gulp.src('app/*.html', {
+            read: false
+        })
+        .pipe(sitemap({
+            siteUrl: 'http://constructionphilippines.co'
+        }))
+        .pipe(gulp.dest('app'));
+});
+
+
+gulp.task('build', ['nunjucks', 'html', 'images', 'fonts', 'extras', 'sitemap'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
